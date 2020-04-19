@@ -40,3 +40,27 @@ Express review with intro to axios
 
 * Refactor your DELETE request to remove from our array given an index
 * Use axios to add functionality to deleteTodo
+
+<!--
+start at index, listen to port
+make sure static files are listening
+(name is useless it was just to show us how it works)
+make sure to change directory path to where index.html is
+
+router tells you where to go for routes
+get and post dont need any additional
+delete (and update) need a params
+
+controller does the get post and delete
+get doesnt do anything with req.body but post does
+
+functions
+database
+  models
+    controllers
+      client side
+
+get and post have req.body
+update and delete have req.params
+
+-->

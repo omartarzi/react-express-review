@@ -4,7 +4,7 @@
   "description": "Express review with intro to axios",
   "main": "./server/index.js",
   "scripts": {
-    
+    "start": "nodemon ./server/index.js",
     "build": "webpack -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,7 +27,8 @@
     "morgan": "^1.9.1",
     "nodemon": "^1.18.10",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "path": "0.12.7"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",

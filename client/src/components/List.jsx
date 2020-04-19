@@ -21,21 +21,43 @@ class List extends Component {
     this.getTodos();
   }
 
+  //axios returns a promise
   getTodos() {
-
+    axios
+    .get('/api')
+    .then((data) => {
+      this.setState({
+        todos: data.data
+      })
+    })
+    .catch((err) => {
+      console.error(err);
+    });
   }
 
   postTodo(todo) {
-
+    axios
+    .post('/api', {todo: todo}) //could also just be {todo}. this posts stuff to the database
+    .then(() => {
+      //get the todos that were updated
+      this.getTodos();
+    })
+    .catch((err) => {
+      console.error(err);
+    });
   }
 
   deleteTodo(index) {
-
+    axios.delete(`/api/${index}`)
+    .then(() => {
+      this.getTodos();
+    })
+    .catch((err) => console.error(err))
   }
 
   handleChange(event) {
     this.setState({
-      todo: event.target.value,
+      todo: event.target.value, //a way to submit things. setting it to be todo so this will be your input
     });
   }
 
